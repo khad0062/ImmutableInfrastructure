@@ -1,0 +1,17 @@
+- name: Linux System Hardening for Golden Image
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Ensure UFW is installed and enabled
+      ufw:
+        state: enabled
+
+    - name: Set UFW default policies
+      ufw:
+        rule: allow
+        name: 'OpenSSH'
+      with_items:
+        - '22/tcp'
+
+ 
