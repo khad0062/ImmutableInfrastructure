@@ -64,9 +64,4 @@ resource "azurerm_linux_virtual_machine" "vm" {
     storage_account_type = "Standard_LRS"
     name                 = "myosdisk1"
   }
-
-  admin_ssh_key {
-    username   = "packer"
-    public_key = file("~/.ssh/id_rsa.pub") // Update path if your public key is elsewhere
-  }
 }
