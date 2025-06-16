@@ -32,8 +32,4 @@ source "azure-arm" "ubuntu" {
 
 build {
   sources = ["source.azure-arm.ubuntu"]
-
-  provisioner "ansible" {
-    playbook_file = "./ansible/playbook.yml"
-  }
 }
